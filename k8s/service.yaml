@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: go-app-k8s
+spec:
+    selector:
+        app: go-app-k8s
+    type: NodePort
+    ports:
+    -   nodePort: 30000
+        port: 8080
+        protocol: TCP
+        targetPort: 8080
