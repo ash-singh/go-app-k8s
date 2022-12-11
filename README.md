@@ -10,9 +10,9 @@ golang minikube K8s development env
 # Use minikube's docker
 `eval $(minikube docker-env)`
 
-# Remove k8s resources
+# Start App
 
-`kubectl delete all --all -n go-app-k8s`
+`./setup.sh`
 
 # Check app
 
