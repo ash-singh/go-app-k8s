@@ -1,22 +1,45 @@
 # go-app-k8s
-golang minikube K8s development env
+Golang app running in a local Kubernetes development environment using Minikube.
 
-# Start minikube for MacOS
-`minikube start --driver=hyperkit --container-runtime=docker`
+## Prerequisites
+- Minikube: You need to have Minikube installed on your machine. If you don't have it, follow the installation instructions on the [Minikube repository](https://github.com/kubernetes/minikube).
 
-# Create an alias to use minikube's kubectl
-`alias kubectl="minikube kubectl --"`
+## Getting Started
 
-# Use minikube's docker
-`eval $(minikube docker-env)`
+### Start Minikube (MacOS)
+```shell
+minikube start --driver=hyperkit --container-runtime=docker
+```
 
-# Start App
+### Set Up `kubectl` Alias
+To use Minikube's `kubectl` command, create an alias:
+```shell
+alias kubectl="minikube kubectl --"
+```
 
-`./setup.sh`
+### Use Minikube's Docker Environment
+```shell
+eval $(minikube docker-env)
+```
 
-# Check app
+### Start the App
+```shell
+./setup.sh
+```
 
-`curl http://$(minikube ip):31234/ping`
+### Check the App
+```shell
+curl http://$(minikube ip):31234/ping
+```
 
-# Delete K8s resources
-`kubectl delete all --all -n go-app-k8s`
+### Delete Kubernetes Resources
+To delete all Kubernetes resources related to the app:
+```shell
+kubectl delete all --all -n go-app-k8s
+```
+
+## License
+[MIT License](LICENSE)
+```
+
+Feel free to modify the instructions and add any additional information specific to your application.
